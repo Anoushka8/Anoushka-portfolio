@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState } from "react";
 
 export default function Hero() {
@@ -66,8 +67,16 @@ export default function Hero() {
                 </div>
                 <p className="hero-meta">B.Des User Experience Design · MIT Institute of Design</p>
               </div>
-              <div className="portrait-slot" aria-label="Reserved space for Anoushka portrait">
-                <span>Portrait</span>
+              <div className="portrait-slot">
+                <Image
+                  src="/images/anoushka-portrait.png"
+                  alt="Portrait of Anoushka Dandawate"
+                  fill
+                  sizes="(max-width: 767px) 90vw, 34vw"
+                  style={{ objectFit: "cover" }}
+                  priority
+                  unoptimized
+                />
               </div>
               <span className="sticker one">Research First. Always.</span>
               <span className="sticker two">Jack Of All Trades ↗</span>

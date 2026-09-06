@@ -3,22 +3,27 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { href: "about.html", label: "About", sectionId: null },
-  { href: "#work", label: "Work", sectionId: "work" },
+  { href: "/about", label: "About", sectionId: "about" },
+  { href: "/work", label: "Work", sectionId: "work" },
   { href: "#playground", label: "Playground", sectionId: "playground" },
   { href: "#contact", label: "Contact", sectionId: "contact" },
 ];
 
 const SECTION_IDS = ["about", "work", "playground", "contact"];
+const ROUTE_HREFS = ["/about", "/work"];
 
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
   const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+  const onRoutePage = ROUTE_HREFS.includes(pathname ?? "");
 
   useEffect(() => {
+    if (onRoutePage) return;
     if (!("IntersectionObserver" in window)) return;
     const sections = SECTION_IDS.map((id) => document.getElementById(id)).filter(
       (el): el is HTMLElement => Boolean(el)
@@ -34,7 +39,7 @@ export default function SiteNav() {
     );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [onRoutePage]);
 
   useEffect(() => {
     function handleKeydown(event: KeyboardEvent) {
@@ -72,16 +77,25 @@ export default function SiteNav() {
           id="main-navigation"
           aria-label="Main navigation"
         >
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              aria-current={link.sectionId && active === link.sectionId ? "location" : undefined}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isRouteLink = ROUTE_HREFS.includes(link.href);
+            // In-page anchors (Playground, Contact) only exist on "/"; from another
+            // route page (About, Work) they must resolve back to the homepage section.
+            const href = isRouteLink || !onRoutePage ? link.href : `/${link.href}`;
+            const isCurrent = isRouteLink
+              ? link.href === pathname
+              : !onRoutePage && active === link.sectionId;
+            return (
+              <a
+                key={link.href}
+                href={href}
+                aria-current={isCurrent ? "location" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
       </div>
     </header>
