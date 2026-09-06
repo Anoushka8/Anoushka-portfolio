@@ -1,69 +1,44 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Hero from "@/components/Hero";
+import Ribbon from "@/components/Ribbon";
+import ProjectGrid from "@/components/ProjectGrid";
+import ProcessBoard from "@/components/ProcessBoard";
+import ToolkitDock from "@/components/ToolkitDock";
+import AboutSummary from "@/components/AboutSummary";
+import ExperienceList from "@/components/ExperienceList";
+import EmrysCraft from "@/components/EmrysCraft";
+import MoreExplorations from "@/components/MoreExplorations";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <RevealOnScroll />
+      <Hero />
+      <Ribbon />
+      <ProjectGrid />
+      <section className="playground" id="playground">
+        <div className="wrap section surface surface-dark">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">The Playground</span>
+              <h2>Serious About Play.</h2>
+            </div>
+            <p>A little window into how I think, what I use, and how ideas become systems.</p>
+          </div>
+          <div className="playground-flow">
+            <ProcessBoard />
+            <ToolkitDock />
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+      <div className="wrap section-stack">
+        <section className="section surface surface-light" id="about">
+          <AboutSummary />
+          <ExperienceList />
+        </section>
+        <EmrysCraft />
+        <MoreExplorations />
+      </div>
+    </main>
   );
 }
