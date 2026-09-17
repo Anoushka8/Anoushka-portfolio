@@ -1565,3 +1565,13 @@ html, body { overscroll-behavior-x: none; }
 
 .id-resume { cursor: pointer; text-decoration: none; transition: background .2s, border-color .2s; }
 .id-resume:hover { background: rgba(255,255,255,.12); border-style: solid; }
+
+/* Library detail CTA: never squeezed or wrapped by long titles */
+.reading-detail > div { flex: 1 1 auto; min-width: 0; }
+.reading-detail h4 { line-height: 1.15; text-wrap: balance; }
+.reading-detail .button { flex: 0 0 auto; align-self: center; white-space: nowrap; min-height: 46px; padding: 0 22px; gap: 8px; line-height: 1; }
+@media (max-width: 767px) {
+  .reading-detail { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+  .reading-detail h4 { font-size: 22px; }
+  .reading-detail .button { align-self: stretch; margin-top: 0; }
+}
