@@ -1584,3 +1584,7 @@ html, body { overscroll-behavior-x: none; }
   .socials { grid-template-columns: 1fr 1fr; }
   .socials a.is-whatsapp { grid-column: 1 / -1; }
 }
+
+/* Portfolio ID contact links: rounded squares, like the footer contact buttons */
+.id-socials a { border-radius: 12px; }
+@media (max-width: 767px) { .id-socials a { border-radius: 10px; } }
