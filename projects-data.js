@@ -3,7 +3,7 @@
 window.PROJECTS = [
 {
   id: 'glow', card: 'work/cards/glow.jpg', name: 'Glow', subtitle: 'Agentic AI Beauty Shopping Companion',
-  question: 'What if AI could feel like a friend?',
+  question: 'Can Agentic AI Reduce the Uncertainty of Beauty Shopping?',
   hero: { image: 'work/glow/cover.jpg', video: 'work/glow/intro.mp4', tint: '#6426eb' },
   details: {
     Overview: "Beauty shopping agentic AI that researches, compares and debates products to find personalised recommendations based on the user's skin, preferences and beauty profile.",
