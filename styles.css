@@ -1575,3 +1575,12 @@ html, body { overscroll-behavior-x: none; }
   .reading-detail h4 { font-size: 22px; }
   .reading-detail .button { align-self: stretch; margin-top: 0; }
 }
+
+/* Contact buttons: five items, and no backdrop blur (iOS Safari can drop it entirely) */
+.socials { grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)); }
+.socials a { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255, 255, 255, .13); border-color: rgba(255, 255, 255, .26); -webkit-transform: translateZ(0); }
+.socials a img { display: block; flex: 0 0 auto; }
+@media (max-width: 767px) {
+  .socials { grid-template-columns: 1fr 1fr; }
+  .socials a.is-whatsapp { grid-column: 1 / -1; }
+}
