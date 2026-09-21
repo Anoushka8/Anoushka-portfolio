@@ -3,7 +3,11 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/work/:slug(glow|perplexity|ayojak|tribes|reloom|seva)",
+      "source": "/work/:slug",
+      "destination": "/project.html?p=:slug"
+    },
+    {
+      "source": "/case/:slug",
       "destination": "/project.html?p=:slug"
     }
   ],
