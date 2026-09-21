@@ -1,14 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/case/:slug",
-      "destination": "/project.html"
-    },
-    {
-      "source": "/work/:slug",
-      "destination": "/project.html"
-    }
-  ]
+  "trailingSlash": false
 }
