@@ -3,26 +3,12 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/work/:slug",
-      "destination": "/project.html?p=:slug"
+      "source": "/case/:slug",
+      "destination": "/project.html"
     },
     {
-      "source": "/case/:slug",
-      "destination": "/project.html?p=:slug"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/project.html",
-      "has": [
-        {
-          "type": "query",
-          "key": "p",
-          "value": "(?<slug>[a-z]+)"
-        }
-      ],
-      "destination": "/work/:slug",
-      "permanent": false
+      "source": "/work/:slug",
+      "destination": "/project.html"
     }
   ]
 }
