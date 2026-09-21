@@ -1,5 +1,5 @@
 (()=>{
-const params=new URLSearchParams(location.search),projects=window.PROJECTS,slug=params.get('p')||location.pathname.split('/').filter(Boolean).pop(),index=Math.max(0,projects.findIndex(p=>p.id===slug)),p=projects[index];
+const params=new URLSearchParams(location.search),projects=window.PROJECTS,pageSlug=params.get('p')||location.pathname.split('/').filter(Boolean).pop(),index=Math.max(0,projects.findIndex(p=>p.id===pageSlug)),p=projects[index];
 const esc=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const slug=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,'-');
 document.title=`${p.name} | Anoushka Dandawate`;
