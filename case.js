@@ -35,7 +35,7 @@ const overlay=o=>{const pos=`left:${o.x}%;top:${o.y}%;width:${o.w}%;height:${o.h
 const block=b=>{
   if(b.img)return `<figure class="case-slide"><img src="${b.img}" alt="" loading="lazy" decoding="async">${(b.overlays||[]).map(overlay).join('')}</figure>`;
   if(b.text)return `<div class="case-text">${b.text.map(t=>`<p>${esc(t)}</p>`).join('')}</div>`;
-  if(b.videos)return `<figure class="case-video">${b.videos.map(v=>`<video class="${b.controls?'':'lazy-video'}" ${b.controls?`src="${v}" controls preload="metadata"`:`data-src="${v}" muted playsinline loop`}></video>`).join('')}${b.caption?`<figcaption>${esc(b.caption)}</figcaption>`:''}</figure>`;
+  if(b.videos)return `<figure class="case-video">${b.videos.map(v=>`<video class="lazy-video" data-src="${v}" muted playsinline loop preload="metadata"${b.controls?' controls':''}></video>`).join('')}${b.caption?`<figcaption>${esc(b.caption)}</figcaption>`:''}</figure>`;
   if(b.embed)return `<div class="case-embed"><iframe src="${b.embed}" title="${esc(b.label)}" loading="lazy"></iframe><a class="button" href="${b.embed}" target="_blank" rel="noopener">Open full screen <span aria-hidden="true">↗</span></a></div>`;
   if(b.soon)return `<div class="case-soon">Slides for this section are on their way.</div>`;
   return '';
