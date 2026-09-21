@@ -1628,3 +1628,9 @@ html, body { overscroll-behavior-x: none; }
 @media (max-width: 767px) {
   .case-tabs .case-back { width: 38px; min-height: 38px; margin-left: 10px; }
 }
+
+/* Tab bar floats at the top of the screen; over the hero it shows back and menu only */
+.case-tabs { position: fixed; top: 14px; left: 0; right: 0; margin: 0; }
+.case-tabs.is-hero .case-tab { max-width: 0; padding-inline: 0; opacity: 0; pointer-events: none; }
+.case-tabs.is-hero .case-tabs-inner { gap: 0; }
+@media (max-width: 767px) { .case-tabs { top: 10px; } }

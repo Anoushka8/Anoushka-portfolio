@@ -25,6 +25,11 @@ document.querySelector('#case-intro').innerHTML=`<div class="case-intro-head"><p
 document.querySelector('#case-tabs').innerHTML=`<div class="case-tabs-inner" id="case-tabs-inner"><button class="case-tab-toggle" type="button" aria-expanded="true" aria-controls="case-tabs-inner" aria-label="Hide section shortcuts"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>${p.sections.map(s=>`<a class="case-tab" href="#${slug(s.title)}">${esc(s.title)}</a>`).join('')}</div>`;
 const tabBar=document.querySelector('#case-tabs'),tabToggle=tabBar.querySelector('.case-tab-toggle');
 const backLink=document.querySelector('.case-back');if(backLink)tabBar.prepend(backLink);
+// Over the hero video only the back and menu buttons show; the section pills appear with the sections.
+const sheet=document.querySelector('#case-sheet');
+const heroWatch=()=>tabBar.classList.toggle('is-hero',sheet.getBoundingClientRect().top>72);
+heroWatch();addEventListener('scroll',heroWatch,{passive:true});addEventListener('resize',heroWatch);
+tabToggle.addEventListener('click',()=>tabBar.classList.remove('is-hero'));
 tabToggle.addEventListener('click',()=>{const collapsed=tabBar.classList.toggle('is-collapsed');tabToggle.setAttribute('aria-expanded',String(!collapsed));tabToggle.setAttribute('aria-label',collapsed?'Show section shortcuts':'Hide section shortcuts');});
 const overlay=o=>{const pos=`left:${o.x}%;top:${o.y}%;width:${o.w}%;height:${o.h}%`;return o.gif?`<img class="slide-overlay" src="${o.gif}" alt="" style="${pos}">`:`<video class="slide-overlay lazy-video" data-src="${o.video}" muted playsinline loop style="${pos}" onerror="this.remove()"></video>`;};
 const block=b=>{
