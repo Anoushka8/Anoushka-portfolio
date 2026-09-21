@@ -1,0 +1,24 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/work/:slug(glow|perplexity|ayojak|tribes|reloom|seva)",
+      "destination": "/project.html?p=:slug"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "(?<slug>[a-z]+)"
+        }
+      ],
+      "destination": "/work/:slug",
+      "permanent": false
+    }
+  ]
+}

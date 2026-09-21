@@ -1,5 +1,5 @@
 (()=>{
-const params=new URLSearchParams(location.search),projects=window.PROJECTS,index=Math.max(0,projects.findIndex(p=>p.id===params.get('p'))),p=projects[index];
+const params=new URLSearchParams(location.search),projects=window.PROJECTS,slug=params.get('p')||location.pathname.split('/').filter(Boolean).pop(),index=Math.max(0,projects.findIndex(p=>p.id===slug)),p=projects[index];
 const esc=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const slug=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,'-');
 document.title=`${p.name} | Anoushka Dandawate`;
@@ -47,7 +47,7 @@ document.querySelectorAll('.case-slide img').forEach(img=>{const set=()=>{const 
 
 // More projects: a carousel of everything else
 const others=projects.filter(x=>x.id!==p.id);
-document.querySelector('#case-next').innerHTML=`<div class="case-more-head"><h2>More Projects</h2><div class="cut-nav"><button class="cut-arrow" type="button" data-more="-1" aria-label="Scroll left"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="cut-arrow" type="button" data-more="1" aria-label="Scroll right"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button></div></div><div class="case-more-rail" id="case-more-rail">${others.map(o=>`<a class="case-more-card" href="project.html?p=${o.id}"><img src="${o.card}" alt="" loading="lazy" decoding="async"><span class="case-more-name">${esc(o.name)}</span><small>${esc(o.subtitle)}</small></a>`).join('')}</div>`;
+document.querySelector('#case-next').innerHTML=`<div class="case-more-head"><h2>More Projects</h2><div class="cut-nav"><button class="cut-arrow" type="button" data-more="-1" aria-label="Scroll left"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="cut-arrow" type="button" data-more="1" aria-label="Scroll right"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button></div></div><div class="case-more-rail" id="case-more-rail">${others.map(o=>`<a class="case-more-card" href="/work/${o.id}"><img src="${o.card}" alt="" loading="lazy" decoding="async"><span class="case-more-name">${esc(o.name)}</span><small>${esc(o.subtitle)}</small></a>`).join('')}</div>`;
 const rail=document.querySelector('#case-more-rail');
 document.querySelectorAll('[data-more]').forEach(b=>b.addEventListener('click',()=>{const card=rail.querySelector('.case-more-card');rail.scrollBy({left:Number(b.dataset.more)*(card.offsetWidth+16),behavior:'smooth'});}));
 

@@ -12,7 +12,7 @@
 <script src="./haptics.js" defer></script>
 </head>
 <body class="about-page"><a class="skip" href="#about-me">Skip to about</a>
-<header class="nav-shell"><div class="wrap nav"><a href="index.html" class="logo" aria-label="Anoushka home">aD<img class="star-mark" src="./star.svg" alt="" draggable="false"></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation"><span></span><span></span><span></span></button><nav class="nav-tabs" id="main-navigation" aria-label="Main navigation"><a href="about.html" aria-current="location">About</a><a href="work.html">Work</a><a href="index.html#playground">Playground</a><a href="index.html#contact">Contact</a></nav><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.2 14.6A8.5 8.5 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button></div></header>
+<header class="nav-shell"><div class="wrap nav"><a href="/" class="logo" aria-label="Anoushka home">aD<img class="star-mark" src="./star.svg" alt="" draggable="false"></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation"><span></span><span></span><span></span></button><nav class="nav-tabs" id="main-navigation" aria-label="Main navigation"><a href="/about" aria-current="location">About</a><a href="/work">Work</a><a href="/#playground">Playground</a><a href="/#contact">Contact</a></nav><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.2 14.6A8.5 8.5 0 0 1 9.4 3.8a8.5 8.5 0 1 0 10.8 10.8Z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button></div></header>
 <main class="page-main about-home" id="about-me">
 <section class="home-stage ipad-stage" aria-labelledby="home-title"><div class="wrap"><div class="ipad" id="ipad"><span class="apple-pencil" aria-hidden="true"></span><span class="ipad-camera" aria-hidden="true"></span><div class="ipad-screen" id="ipad-screen"><div class="home-screen" id="home-canvas">
 <div class="home-wallpaper" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -103,11 +103,11 @@ const sideQuests=[
 ];
 const folders={
 work:{title:'Other Work',note:'Case studies, redesigns, and research that shaped how I think.',items:[
-{name:'Glow',note:'Agentic AI',icon:'sparkle',tint:'teal',href:'work.html'},
-{name:'Ayojak',note:'Design System',icon:'grid',tint:'navy',href:'work.html'},
-{name:'Perplexity',note:'Redesign Study',icon:'search',tint:'ink',href:'work.html'},
-{name:'Reloom',note:'Sustainability',icon:'loop',tint:'green',href:'work.html'},
-{name:'Innerwear Study',note:'Behavioral Research',icon:'chart',tint:'indigo',href:'work.html'},
+{name:'Glow',note:'Agentic AI',icon:'sparkle',tint:'teal',href:'/work'},
+{name:'Ayojak',note:'Design System',icon:'grid',tint:'navy',href:'/work'},
+{name:'Perplexity',note:'Redesign Study',icon:'search',tint:'ink',href:'/work'},
+{name:'Reloom',note:'Sustainability',icon:'loop',tint:'green',href:'/work'},
+{name:'Innerwear Study',note:'Behavioral Research',icon:'chart',tint:'indigo',href:'/work'},
 {name:'Harshdeep Foundation',note:'Branding & Social',icon:'heart',tint:'pink'},
 {name:'Behance',note:'See everything',img:brand.behance,tint:'blue',href:links.behance}]},
 photos:{title:'Photos',note:'A Little Life, Unsorted.',photos},
@@ -135,7 +135,7 @@ const tileIcon=item=>item.art?`<span class="app-icon is-art">${appArt[item.art]}
 function appTile(item){if(item.divider)return '<span class="dock-sep" aria-hidden="true"></span>';if(item.folder&&!item.name)return `<button class="app" type="button" data-folder="${item.folder}" aria-haspopup="dialog"><span class="app-icon is-folder">${appArt.folder}</span><span class="app-name">${folders[item.folder].title}</span></button>`;const inner=`${tileIcon(item)}<span class="app-name">${escapeHtml(item.name)}</span>${item.note?`<small class="app-note">${escapeHtml(item.note)}</small>`:''}`;if(item.href)return `<a class="app" href="${item.href}"${isExternal(item.href)?' target="_blank" rel="noopener noreferrer"':''}>${inner}</a>`;if(item.folder)return `<button class="app" type="button" data-folder="${item.folder}" aria-haspopup="dialog">${inner}</button>`;if(item.action)return `<button class="app" type="button" data-action="${item.action}">${inner}</button>`;return `<div class="app">${inner}</div>`;}
 const homeApps={
 folders:[{folder:'work'},{folder:'who'},{name:'Procreate',art:'procreate',action:'procreate'},{name:'Photos',art:'photos',folder:'photos'}],
-dock:[{name:'Work',art:'finder',href:'work.html'},{name:'Playground',art:'freeform',href:'index.html#playground'},{name:'Experience',art:'notes',href:'index.html#resume'},{name:'Reading',art:'books',href:'index.html#writing'},{name:'Music',art:'music',action:'music'},{divider:true},{name:'Email',art:'mail',href:links.mail},{name:'LinkedIn',img:brand.linkedin,invert:true,tint:'blue',href:links.linkedin},{name:'Behance',img:brand.behance,tint:'blue',href:links.behance},{name:'Medium',img:brand.medium,tint:'ink',href:links.medium}]
+dock:[{name:'Work',art:'finder',href:'/work'},{name:'Playground',art:'freeform',href:'/#playground'},{name:'Experience',art:'notes',href:'/#resume'},{name:'Reading',art:'books',href:'/#writing'},{name:'Music',art:'music',action:'music'},{divider:true},{name:'Email',art:'mail',href:links.mail},{name:'LinkedIn',img:brand.linkedin,invert:true,tint:'blue',href:links.linkedin},{name:'Behance',img:brand.behance,tint:'blue',href:links.behance},{name:'Medium',img:brand.medium,tint:'ink',href:links.medium}]
 };
 document.querySelectorAll('[data-apps]').forEach(slot=>{slot.innerHTML=homeApps[slot.dataset.apps].map(appTile).join('');});
 document.querySelector('#quests-count').textContent=sideQuests.length;
