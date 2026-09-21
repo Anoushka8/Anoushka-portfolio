@@ -1634,3 +1634,15 @@ html, body { overscroll-behavior-x: none; }
 .case-tabs.is-hero .case-tab { max-width: 0; padding-inline: 0; opacity: 0; pointer-events: none; }
 .case-tabs.is-hero .case-tabs-inner { gap: 0; }
 @media (max-width: 767px) { .case-tabs { top: 10px; } }
+
+/* Dark mode: Featured Work cards were grey on near-black navy. Tint them blue and deepen the band. */
+:root[data-theme="dark"] #work { --band: linear-gradient(180deg, #04182b, #010d19); }
+:root[data-theme="dark"] #work .project { background: #0e2438; box-shadow: 0 0 0 .5px rgba(143, 220, 240, .16), 0 18px 44px rgba(0, 0, 0, .5); }
+:root[data-theme="dark"] #work .project .tags span { background: rgba(143, 220, 240, .12); color: #cfeaf6; }
+:root[data-theme="dark"] #work .cover.has-image { background: #0a1c2c; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #work { --band: linear-gradient(180deg, #04182b, #010d19); }
+  :root:not([data-theme="light"]) #work .project { background: #0e2438; box-shadow: 0 0 0 .5px rgba(143, 220, 240, .16), 0 18px 44px rgba(0, 0, 0, .5); }
+  :root:not([data-theme="light"]) #work .project .tags span { background: rgba(143, 220, 240, .12); color: #cfeaf6; }
+  :root:not([data-theme="light"]) #work .cover.has-image { background: #0a1c2c; }
+}
