@@ -1620,3 +1620,11 @@ html, body { overscroll-behavior-x: none; }
   .case-more-rail { grid-auto-columns: 78%; }
   .case-next { margin-top: 56px; }
 }
+
+/* Back button rides in the section-tabs row */
+.case-tabs { display: flex; align-items: center; gap: 10px; }
+.case-tabs .case-back { position: static; flex: 0 0 auto; pointer-events: auto; width: 42px; min-height: 42px; padding: 0; justify-content: center; border-radius: 999px; margin-left: max(16px, calc((100vw - 1240px) / 2)); }
+.case-tabs .case-tabs-inner { margin-left: 0; }
+@media (max-width: 767px) {
+  .case-tabs .case-back { width: 38px; min-height: 38px; margin-left: 10px; }
+}
