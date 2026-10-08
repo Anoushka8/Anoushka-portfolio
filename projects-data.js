@@ -57,7 +57,7 @@ window.PROJECTS = [
   },
   tags: ['OOUX', 'B2B', 'Dashboard', 'UX Strategy'],
   sections: [
-    { title: 'Overview', blocks: [{ img: '/work/ayojak/1-about.jpg' }, { img: '/work/ayojak/2-problem-and-persona.jpg' }] },
+    { title: 'Overview', blocks: [{ img: '/work/ayojak/1-about.jpg' }, { img: '/work/ayojak/2-problem.jpg' }, { img: '/work/ayojak/2-persona.jpg' }] },
     { title: 'Research', blocks: [{ img: '/work/ayojak/3-primary-research.jpg' }, { img: '/work/ayojak/5-competitive-analysis.jpg' }] },
     { title: 'Task Flows', blocks: [{ img: '/work/ayojak/4-task-flow.jpg' }, { img: '/work/ayojak/6-swimlane-diagram.jpg' }] },
     { title: 'OOUX', blocks: [{ img: '/work/ayojak/7-grammar-and-user-stories.jpg' }, { img: '/work/ayojak/9-task-prioritisation.jpg' }, { img: '/work/ayojak/10-visualization.jpg' }] },
