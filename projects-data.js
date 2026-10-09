@@ -3,7 +3,7 @@
 window.PROJECTS = [
 {
   id: 'glow', card: '/work/cards/glow.jpg', name: 'Glow', subtitle: 'Agentic AI Beauty Shopping Companion',
-  question: 'Can Agentic AI Reduce the Uncertainty of Beauty Shopping?',
+  question: 'Can AI make beauty shopping feel less like guesswork?',
   hero: { image: '/work/glow/cover.jpg', video: '/work/glow/intro.mp4', tint: '#6426eb' },
   details: {
     Overview: "Beauty shopping agentic AI that researches, compares and debates products to find personalised recommendations based on the user's skin, preferences and beauty profile.",
@@ -25,7 +25,7 @@ window.PROJECTS = [
 },
 {
   id: 'perplexity', card: '/work/cards/perplexity.jpg', name: 'Perplexity', subtitle: 'Cognitive Ergonomics Redesign',
-  question: 'What if dense information could breathe?',
+  question: 'Perplexity had the answers. So why was finding clarity still so hard?',
   hero: { image: '/work/perplexity/1-perplexity-main.jpg', tint: '#fbfbf6' },
   details: {
     Overview: 'A cognitive ergonomics redesign exploring how dense AI-generated information can be made easier to navigate, understand and process.',
@@ -47,7 +47,7 @@ window.PROJECTS = [
 },
 {
   id: 'ayojak', card: '/work/cards/ayojak.jpg', name: 'Ayojak', subtitle: 'B2B Exhibition Management Platform',
-  question: 'How do you make complexity feel effortless?',
+  question: 'Behind every smooth exhibition is chaos. Can one dashboard change that?',
   hero: { image: '/work/ayojak/first.jpg', video: '/work/ayojak/intro.mp4', tint: '#edecf1' },
   details: {
     Overview: 'A B2B exhibition management platform using Object-Oriented UX to organise complex exhibition operations, entities and workflows into a clearer dashboard experience.',
@@ -68,7 +68,7 @@ window.PROJECTS = [
 },
 {
   id: 'tribes', card: '/work/cards/tribes.jpg', name: 'Tribes of Maharashtra', subtitle: 'A Cultural UX Project',
-  question: 'How can design keep living cultures visible?',
+  question: 'Can digital design preserve Maharashtra’s tribal art while helping its artisans earn a living?',
   hero: { image: '/work/tribes/cover-main.jpg', tint: '#0e0e0e' },
   details: {
     Overview: 'A cultural research and rapid prototyping project exploring the crafts, communities and experiences of tribes across Maharashtra.',
@@ -90,7 +90,7 @@ window.PROJECTS = [
 },
 {
   id: 'reloom', card: '/work/cards/reloom.jpg', name: 'Reloom', subtitle: 'Circular Fashion Marketplace',
-  question: 'How do you make sustainability feel like convenience?',
+  question: 'People want sustainable fashion. Why is buying better still so difficult?',
   hero: { image: '/work/reloom/1-reloom-cover.jpg', tint: '#e8f3ec' },
   details: {
     Overview: 'A circular fashion marketplace designed around thrifting, donating, reusing and giving clothes another life.',
@@ -112,7 +112,7 @@ window.PROJECTS = [
 },
 {
   id: 'seva', card: '/work/cards/seva.jpg', name: 'Maha e-Seva Kendra', subtitle: 'A Service Design Case Study',
-  question: 'How do you make public services feel less daunting?',
+  question: 'Why does accessing a government service still feel like navigating a maze?',
   hero: { image: '/work/maha/cover-main.jpg', tint: '#4f2fde' },
   details: {
     Overview: 'A UX research and service design project exploring how citizens interact with government services through Maha e-Seva Kendras.',
