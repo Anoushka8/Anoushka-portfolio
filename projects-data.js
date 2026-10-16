@@ -69,7 +69,7 @@ window.PROJECTS = [
 {
   id: 'eflip', card: '/work/cards/eflip.jpg', name: 'E-Flip', subtitle: 'Sustainable UX For Device Reuse',
   question: 'Your old phone still works. So why does it end up as e-waste?',
-  hero: { image: '/work/eflip/1-cover-page.jpg', tint: '#13150f' },
+  hero: { image: '/work/eflip/cover.jpg', tint: '#13150f' },
   details: {
     Overview: 'A sustainable UX project on responsible consumption of digital devices: kiosks and an app that help people assess an old phone, tablet or accessory and choose to sell, donate, keep or buy refurbished instead of letting it become e-waste.',
     Role: 'UX / Service Designer', Team: '4 members', Type: 'Sustainable UX \u00b7 Service Design', Organisation: 'MIT Institute of Design',
