@@ -1694,3 +1694,11 @@ html, body { overscroll-behavior-x: none; }
 
 /* Explorations rail fades out at both edges instead of slicing a card in half */
 .extras-grid { -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+
+/* Explorations rail runs the full width of the page, no edge fade */
+.extras-grid { -webkit-mask-image: none; mask-image: none; margin-inline: calc(50% - 50vw); width: 100vw; max-width: 100vw; padding-inline: 0; }
+.extras-track { padding-inline: max(16px, calc((100vw - 1240px) / 2)); }
+#home-extras { padding-bottom: 36px; }
+#home-extras .section-cta { margin-top: 24px; }
+.playground > .section:first-child { padding-top: 48px; }
+@media (max-width: 767px) { #home-extras { padding-bottom: 24px; } .playground > .section:first-child { padding-top: 32px; } }
