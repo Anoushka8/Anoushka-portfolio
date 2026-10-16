@@ -1691,3 +1691,6 @@ html, body { overscroll-behavior-x: none; }
 #home-extras .section-head { margin-bottom: 26px; }
 #home-extras .section-cta { margin-top: 28px; }
 @media (max-width: 767px) { #work.section { padding-bottom: 32px; } #home-extras { padding-top: 24px; } }
+
+/* Explorations rail fades out at both edges instead of slicing a card in half */
+.extras-grid { -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
