@@ -131,6 +131,28 @@ window.PROJECTS = [
     { title: 'New Service', blocks: [{ img: '/work/maha/21-levels-of-service-value-creation.jpg' }, { img: '/work/maha/22-new-value-flow.jpg' }, { img: '/work/maha/23-new-value-eq.jpg' }, { img: '/work/maha/24-final-storyboard.jpg' }, { img: '/work/maha/25-new-service-blueprint.jpg' }] },
     { title: 'Screens', blocks: [{ img: '/work/maha/26-screens.jpg' }, { img: '/work/maha/27-thank-you.jpg' }] }
   ]
+},
+{
+  id: 'eflip', card: '/work/cards/eflip.jpg', name: 'E-Flip', subtitle: 'Sustainable UX For Device Reuse',
+  question: 'Why do we replace devices that still have life left in them?',
+  hero: { image: '/work/eflip/1-cover-page.jpg', tint: '#13150f' },
+  details: {
+    Overview: 'A sustainable UX project on responsible consumption of digital devices: kiosks and an app that help people assess an old phone, tablet or accessory and choose to sell, donate, keep or buy refurbished instead of letting it become e-waste.',
+    Role: 'UX / Service Designer', Type: 'Sustainable UX \u00b7 Service Design', Organisation: 'MIT Institute of Design',
+    Achievement: 'Designed an end-to-end service, behaviour model and brand system for circular electronics.',
+    Timeline: '2026 \u00b7 Academic Project'
+  },
+  tags: ['Sustainable UX', 'Service Design', 'Behaviour Design', 'Branding'],
+  sections: [
+    { title: 'Context', blocks: [{ img: '/work/eflip/2-context.jpg' }, { img: '/work/eflip/3-problem-statement.jpg' }, { img: '/work/eflip/4-how-is-this-contributing-to-sustainability.jpg' }, { img: '/work/eflip/5-ecosystem.jpg' }] },
+    { title: 'Frameworks', blocks: [{ img: '/work/eflip/7-frameworks-we-used.jpg' }, { img: '/work/eflip/7-1-actor-mapping.jpg' }, { img: '/work/eflip/7-2-needs-consequences-mapping.jpg' }, { img: '/work/eflip/7-3-sdg-mapping-12.jpg' }, { img: '/work/eflip/7-4-sdg-mapping-13.jpg' }] },
+    { title: 'User Mapping', blocks: [{ img: '/work/eflip/8-sus-user-mapping.jpg' }, { img: '/work/eflip/9-ipad-user-mapping.jpg' }, { img: '/work/eflip/10-phone-user-mapping.jpg' }, { img: '/work/eflip/11-foggs-model-before.jpg' }] },
+    { title: 'Ideation', blocks: [{ img: '/work/eflip/12-ideations-concepts.jpg' }, { img: '/work/eflip/13-concept-1.jpg' }, { img: '/work/eflip/14-concept-2.jpg' }, { img: '/work/eflip/15-concept-3.jpg' }, { img: '/work/eflip/16-concept-4.jpg' }] },
+    { title: 'Solution', blocks: [{ img: '/work/eflip/17-solution.jpg' }, { img: '/work/eflip/18-logo.jpg' }, { img: '/work/eflip/19-final-concept.jpg' }, { img: '/work/eflip/20-features.jpg' }, { img: '/work/eflip/21-service-flow.jpg' }] },
+    { title: 'Screens', blocks: [{ img: '/work/eflip/22-screens.jpg' }, { img: '/work/eflip/22-2-screens.jpg' }, { img: '/work/eflip/34-mock.jpg' }] },
+    { title: 'Behaviour & Impact', blocks: [{ img: '/work/eflip/23-responsible-ai.jpg' }, { img: '/work/eflip/24-e-flip-psychological-levers.jpg' }, { img: '/work/eflip/25-ladder-of-intervention.jpg' }, { img: '/work/eflip/26-e-flip-behaviour-progression.jpg' }, { img: '/work/eflip/27-e-flip-business-model.jpg' }, { img: '/work/eflip/28-e-flip-impact.jpg' }, { img: '/work/eflip/29-impact-effort-matrix.jpg' }, { img: '/work/eflip/30-lean-ux-sustainability-canvas.jpg' }, { img: '/work/eflip/31-how-we-utilized-the-sustainability-ux-principles.jpg' }] },
+    { title: 'Brand System', blocks: [{ img: '/work/eflip/32-branding.jpg' }, { img: '/work/eflip/33-typography-color.jpg' }, { img: '/work/eflip/35.jpg' }, { img: '/work/eflip/36.jpg' }, { img: '/work/eflip/37.jpg' }, { img: '/work/eflip/38.jpg' }, { img: '/work/eflip/39.jpg' }, { img: '/work/eflip/40.jpg' }, { img: '/work/eflip/41.jpg' }, { img: '/work/eflip/42.jpg' }, { img: '/work/eflip/43.jpg' }, { img: '/work/eflip/44.jpg' }] }
+  ]
 }
 ];
 
