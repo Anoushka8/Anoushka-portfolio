@@ -1653,6 +1653,6 @@ html, body { overscroll-behavior-x: none; }
 .extras-track { display: flex; flex-wrap: nowrap; gap: 16px; width: max-content; animation: extras-marquee var(--loop, 40s) linear infinite; }
 .extras-track:hover, .extras-track:focus-within, .extras-track.is-paused { animation-play-state: paused; }
 .extras-track .extra-card { flex: 0 0 clamp(220px, 23vw, 280px); }
-@keyframes extras-marquee { from { transform: translateX(0); } to { transform: translateX(calc(var(--run, 0px) * -1 - 16px)); } }
+@keyframes extras-marquee { from { transform: translateX(0); } to { transform: translateX(calc(var(--run, 0px) * -1)); } }
 @media (prefers-reduced-motion: reduce) { .extras-track { animation: none; } }
 @media (max-width: 767px) { .extras-track .extra-card { flex-basis: 240px; } }
