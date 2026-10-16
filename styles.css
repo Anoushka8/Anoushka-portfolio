@@ -1684,3 +1684,10 @@ html, body { overscroll-behavior-x: none; }
   .story-shots figure { flex-basis: 140px; }
   .story-shots figure:nth-child(2), .story-shots figure:nth-child(3) { margin-top: 0; }
 }
+
+/* Home: Featured Work and My Explorations sit closer together */
+#work.section { padding-bottom: 40px; }
+#home-extras { padding-top: 34px; }
+#home-extras .section-head { margin-bottom: 26px; }
+#home-extras .section-cta { margin-top: 28px; }
+@media (max-width: 767px) { #work.section { padding-bottom: 32px; } #home-extras { padding-top: 24px; } }
