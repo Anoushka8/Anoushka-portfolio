@@ -1702,3 +1702,26 @@ html, body { overscroll-behavior-x: none; }
 #home-extras .section-cta { margin-top: 24px; }
 .playground > .section:first-child { padding-top: 48px; }
 @media (max-width: 767px) { #home-extras { padding-bottom: 24px; } .playground > .section:first-child { padding-top: 32px; } }
+
+/* Dark mode: a deep blue wallpaper behind the page (photo: Unsplash, free licence) */
+:root[data-theme="dark"] body {
+  background-image: linear-gradient(rgba(3, 7, 13, .88), rgba(3, 7, 13, .94)), url("./wallpaper-dark.jpg");
+  background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;
+}
+:root[data-theme="dark"] .playground > .section,
+:root[data-theme="dark"] .section-stack > .section:nth-child(2) { --band: transparent; }
+:root[data-theme="dark"] #explorations,
+:root[data-theme="dark"] .section-stack > .section:nth-child(3) { --band: rgba(13, 17, 23, .72); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body {
+    background-image: linear-gradient(rgba(3, 7, 13, .88), rgba(3, 7, 13, .94)), url("./wallpaper-dark.jpg");
+    background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;
+  }
+  :root:not([data-theme="light"]) .playground > .section,
+  :root:not([data-theme="light"]) .section-stack > .section:nth-child(2) { --band: transparent; }
+  :root:not([data-theme="light"]) #explorations,
+  :root:not([data-theme="light"]) .section-stack > .section:nth-child(3) { --band: rgba(13, 17, 23, .72); }
+}
+@media (max-width: 1023px) {
+  :root[data-theme="dark"] body, :root:not([data-theme="light"]) body { background-attachment: scroll; }
+}
