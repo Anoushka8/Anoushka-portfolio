@@ -1646,3 +1646,13 @@ html, body { overscroll-behavior-x: none; }
   :root:not([data-theme="light"]) #work .project .tags span { background: rgba(143, 220, 240, .12); color: #cfeaf6; }
   :root:not([data-theme="light"]) #work .cover.has-image { background: #0a1c2c; }
 }
+
+/* Explorations rail loops forever: one run of cards plus a copy, slid left by a run's width */
+.extras-grid { display: block; grid-template-columns: none; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.extras-grid::-webkit-scrollbar { display: none; }
+.extras-track { display: flex; flex-wrap: nowrap; gap: 16px; width: max-content; animation: extras-marquee var(--loop, 40s) linear infinite; }
+.extras-track:hover, .extras-track:focus-within, .extras-track.is-paused { animation-play-state: paused; }
+.extras-track .extra-card { flex: 0 0 clamp(220px, 23vw, 280px); }
+@keyframes extras-marquee { from { transform: translateX(0); } to { transform: translateX(calc(var(--run, 0px) * -1 - 16px)); } }
+@media (prefers-reduced-motion: reduce) { .extras-track { animation: none; } }
+@media (max-width: 767px) { .extras-track .extra-card { flex-basis: 240px; } }
