@@ -1648,11 +1648,17 @@ html, body { overscroll-behavior-x: none; }
 }
 
 /* Explorations rail loops forever: one run of cards plus a copy, slid left by a run's width */
-.extras-grid { display: block; grid-template-columns: none; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.extras-grid { display: block; grid-template-columns: none; overflow: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
 .extras-grid::-webkit-scrollbar { display: none; }
 .extras-track { display: flex; flex-wrap: nowrap; gap: 16px; width: max-content; animation: extras-marquee var(--loop, 40s) linear infinite; }
-.extras-track:hover, .extras-track:focus-within, .extras-track.is-paused { animation-play-state: paused; }
+.extras-track:focus-within, .extras-track.is-paused { animation-play-state: paused; }
+.extras-track .extra-card:hover { transform: translateY(-4px); }
 .extras-track .extra-card { flex: 0 0 clamp(220px, 23vw, 280px); }
 @keyframes extras-marquee { from { transform: translateX(0); } to { transform: translateX(calc(var(--run, 0px) * -1)); } }
 @media (prefers-reduced-motion: reduce) { .extras-track { animation: none; } }
 @media (max-width: 767px) { .extras-track .extra-card { flex-basis: 240px; } }
+
+/* Context pills on the exploration cards */
+.extra-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 10px; }
+.extra-card .tags span { padding: 4px 10px; border-radius: 999px; background: var(--fill); color: var(--label-2); font-size: 11px; font-weight: 600; }
+.extra-card .extra-cta { padding-top: 8px; }
